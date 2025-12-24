@@ -122,7 +122,7 @@ class Board:
 
         if 0 <= row < 8 and 0 <= col < 8:
             print(f"Clicked on square: {chr(col + ord('a'))}{8 - row}")
-            #self.print_board()
+            self.print_board()
             piece = self.board[row][col]
             print("piece: ", piece.color + piece.type if piece else "None")
             

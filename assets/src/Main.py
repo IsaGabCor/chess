@@ -5,6 +5,15 @@ from UI import UI
 
 pygame.init()
 
+#changing the icon of the window
+try:
+        icon_image = pygame.image.load("chess/assets/pieces/bn.png")
+except pygame.error as e:
+        print(f"Unable to load icon image: {e}")
+        icon_image = None
+if icon_image:
+        pygame.display.set_icon(icon_image)
+
 # Define constants for the game window
 SQUARE_SIZE = 80
 BOARD_SIZE = 8
@@ -18,7 +27,7 @@ WINDOW_HEIGHT = TOP_PADDING + 8 * SQUARE_SIZE + BOTTOM_PADDING
 
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
-pygame.display.set_caption("Chess Game")
+pygame.display.set_caption("Chess Engine v0.1 by Isaiah C")
 
 #create an instance of board class and display the board
 piece_images = Piece.load_image(SQUARE_SIZE)
